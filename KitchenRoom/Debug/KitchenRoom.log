@@ -1,3 +1,3 @@
 ﻿  Source.cpp
-D:\Tuhoccode\KyThuatDHMT\KitchenRoom\KitchenRoom\KitchenRoom\Source.cpp(1807,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
-  KitchenRoom.vcxproj -> D:\Tuhoccode\KyThuatDHMT\KitchenRoom\KitchenRoom\Debug\KitchenRoom.exe
+E:\Ky thuat do hoa may tinh\KTDHMT_10_05\KitchenRoom\Source.cpp(1572,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  KitchenRoom.vcxproj -> E:\Ky thuat do hoa may tinh\KTDHMT_10_05\Debug\KitchenRoom.exe

@@ -8,29 +8,8 @@ using namespace std;
 
 static float  megh_t = 0.0;
 static float  drop_t = 0.0;
-
-//void triangle()
-//{
-//	glClear(GL_COLOR_BUFFER_BIT);
-//	glColor3f(0.88, 0.88, 0.88);
-//	glPointSize(4.0);
-//	glBegin(GL_TRIANGLES);
-//	glVertex2f(0.0, 768.0);
-//	glVertex2f(0.0, 748.0);
-//	glVertex2f(70.0, 748.0);
-//	glEnd();
-//	glFlush();
-//
-//	glBegin(GL_LINE_LOOP);
-//	glColor3f(0.0, 0.0, 0.0);
-//	glVertex2f(0.0, 768.0);
-//	glVertex2f(0.0, 748.0);
-//	glVertex2f(70.0, 748.0);
-//
-//	glEnd();
-//	glFlush();
-//
-//}
+int tvIsOn = 1;
+int lightIsOn = 1;
 
 void triangle()
 {
@@ -53,35 +32,6 @@ void triangle()
 
 	glFlush();
 }
-
-//void roof()
-//{
-//	//roof
-//	glBegin(GL_POLYGON);
-//	glColor3f(0.96, 0.96, 0.93);
-//	glVertex2f(0.0, 768.0);
-//	glVertex2f(70.0, 748.0);
-//	glVertex2f(130.0, 748.0);
-//	glVertex2f(300.0, 718.0);
-//	glVertex2f(800.0, 718.0);
-//	glVertex2f(1024.0, 768.0);
-//
-//	glEnd();
-//	glFlush();
-//
-//	glBegin(GL_LINE_LOOP);
-//	glColor3f(0.0, 0.0, 0.0);
-//	glVertex2f(0.0, 768.0);
-//	glVertex2f(70.0, 748.0);
-//	glVertex2f(130.0, 748.0);
-//	glVertex2f(300.0, 718.0);
-//	glVertex2f(800.0, 718.0);
-//	glVertex2f(1024.0, 768.0);
-//
-//	glEnd();
-//	glFlush();
-//}
-
 
 void roof()
 {
@@ -126,99 +76,6 @@ void roof()
 
 	glFlush();
 }
-
-
-//void floor()
-//{
-//	//floor
-//	glBegin(GL_QUADS);
-//	glColor3f(1.1, 1.0, 0.6);
-//	glVertex2f(130.0, 0.0);
-//	glVertex2f(1024.0, 0.0);
-//	glVertex2f(800.0, 238.0);
-//	glVertex2f(300.0, 238.0);
-//
-//	glEnd();
-//	glFlush();
-//
-//	glBegin(GL_LINE_LOOP);
-//	glColor3f(0.0, 0.0, 0.0);
-//	glVertex2f(130.0, 0.0);
-//	glVertex2f(1024.0, 0.0);
-//	glVertex2f(800.0, 238.0);
-//	glVertex2f(300.0, 238.0);
-//
-//	glEnd();
-//	glFlush();
-//
-//}
-//void background_wall()
-//{
-//	//background wall
-//	glBegin(GL_POLYGON);
-//	glColor3f(0.2, 0.1, 0.0);
-//
-//	glVertex2f(800.0, 718.0);
-//	glVertex2f(300.0, 718.0);
-//	glVertex2f(300.0, 538.0);
-//	glVertex2f(220.0, 491.0);
-//	glVertex2f(220.0, 360.0);
-//	glVertex2f(300.0, 360.0);
-//	glVertex2f(300.0, 238.0);
-//	glVertex2f(800.0, 238.0);
-//
-//	glEnd();
-//	glFlush();
-//
-//
-//	glBegin(GL_QUADS);
-//	glColor3f(0.25, 0.25, 0.25);
-//
-//	glVertex2f(700.0, 718.0);
-//	glVertex2f(500.0, 718.0);
-//	glVertex2f(500.0, 360.0);
-//	glVertex2f(700.0, 360.0);
-//
-//	glEnd();
-//	glFlush();
-//
-//	glBegin(GL_LINE_LOOP);
-//	glColor3f(0.0, 0.0, 0.0);
-//
-//	glVertex2f(700.0, 718.0);
-//	glVertex2f(500.0, 718.0);
-//	glVertex2f(500.0, 360.0);
-//	glVertex2f(700.0, 360.0);
-//
-//	glEnd();
-//	glFlush();
-//
-//}
-//void right_side_wall()
-//{
-//	//right side wall
-//	glBegin(GL_QUADS);
-//	glColor3f(0.88, 0.88, 0.88);
-//	glVertex2f(1024.0, 768.0);
-//	glVertex2f(800.0, 718.0);
-//	glVertex2f(800.0, 238.0);
-//	glVertex2f(1024.0, 0.0);
-//
-//	glEnd();
-//	glFlush();
-//
-//	glBegin(GL_LINE_LOOP);
-//	glColor3f(0.0, 0.0, 0.0);
-//	glVertex2f(1024.0, 768.0);
-//	glVertex2f(800.0, 718.0);
-//	glVertex2f(800.0, 238.0);
-//	glVertex2f(1024.0, 0.0);
-//
-//	glEnd();
-//	glFlush();
-//
-//}
-
 void floor()
 {
 	//floor
@@ -291,25 +148,6 @@ void drawRefrigerator() {
 	glVertex3f(430.0, 410.0 - 5.0, 0.0); // Bottom right
 	glEnd();
 	glFlush();
-
-    // Door frame
-    /*glBegin(GL_LINE_LOOP);
-    glColor3f(0.5, 0.5, 0.5);
-    glVertex3f(430.0, 520.0, 0.0);
-    glVertex3f(315.0, 520.0, 0.0);
-    glVertex3f(315.0, 360.0, 0.0);
-    glVertex3f(430.0, 360.0, 0.0);
-    glEnd();
-    glFlush();*/
-
-	//glBegin(GL_QUADS);
-	//glColor3f(0.1, 0.1, 0.1); // Black color
-	//glVertex3f(480.0, 360.0, 0.0); // Top right
-	//glVertex3f(290.0, 360.0, 0.0); // Top left
-	//glVertex3f(290.0, 340.0, 0.0); // Bottom left
-	//glVertex3f(480.0, 340.0, 0.0); // Bottom right
-	//glEnd();
-	//glFlush();
 
 }
 
@@ -472,147 +310,6 @@ void right_side_wall()
 	glEnd();
 	glFlush();
 }
-
-
-//void window()
-//{
-//	//window
-//	glBegin(GL_QUADS);
-//	glColor3f(0.90, 0.97, 0.98);
-//	glVertex2f(900.0, 600.0);
-//	glVertex2f(900.0, 300.0);
-//	glVertex2f(970.0, 280.0);
-//	glVertex2f(970.0, 600.0);
-//
-//	glEnd();
-//	glFlush();
-//
-//	glBegin(GL_LINE_LOOP);
-//	glColor3f(0.0, 0.0, 0.0);
-//	glVertex2f(900.0, 600.0);
-//	glVertex2f(900.0, 300.0);
-//	glVertex2f(970.0, 280.0);
-//	glVertex2f(970.0, 600.0);
-//
-//	glEnd();
-//	glFlush();
-//
-//}
-//void cabinet_top()
-//{
-//	//cabinet side top
-//	glBegin(GL_QUADS);
-//	glColor3f(0.25, 0.25, 0.25);
-//	glVertex2f(0.0, 748.0);
-//	glVertex2f(0.0, 438.0);
-//	glVertex2f(130.0, 438.0);
-//	glVertex2f(130.0, 748.0);
-//
-//	glEnd();
-//	glFlush();
-//
-//	glBegin(GL_LINE_LOOP);
-//	glColor3f(0.0, 0.0, 0.0);
-//	glVertex2f(0.0, 748.0);
-//	glVertex2f(0.0, 438.0);
-//	glVertex2f(130.0, 438.0);
-//	glVertex2f(130.0, 748.0);
-//
-//	glEnd();
-//	glFlush();
-//
-//	//cabinet front top
-//	glBegin(GL_QUADS);
-//	glColor3f(0.25, 0.25, 0.25);
-//	glVertex2f(130.0, 748.0);
-//	glVertex2f(130.0, 438.0);
-//	glVertex2f(300.0, 538.0);
-//	glVertex2f(300.0, 718.0);
-//
-//	glEnd();
-//	glFlush();
-//
-//	glBegin(GL_LINE_LOOP);
-//	glColor3f(0.0, 0.0, 0.0);
-//	glVertex2f(130.0, 748.0);
-//	glVertex2f(130.0, 438.0);
-//	glVertex2f(300.0, 538.0);
-//	glVertex2f(300.0, 718.0);
-//
-//	glEnd();
-//	glFlush();
-//}
-//
-//void cabinet_top_design()
-//{
-//	//cabinet front door design 
-//	glBegin(GL_QUADS);
-//	glColor3f(0.88, 0.93, 0.93);
-//	glVertex2f(130.0, 480.0);
-//	glVertex2f(130.0, 455.0);
-//	glVertex2f(135.0, 455.0);
-//	glVertex2f(135.0, 480.0);
-//
-//	glEnd();
-//	glFlush();
-//
-//	glBegin(GL_LINE_LOOP);
-//	glColor3f(0.0, 0.0, 0.0);
-//	glVertex2f(130.0, 480.0);
-//	glVertex2f(130.0, 455.0);
-//	glVertex2f(135.0, 455.0);
-//	glVertex2f(135.0, 480.0);
-//
-//	glEnd();
-//	glFlush();
-//
-//	glBegin(GL_QUADS);
-//	glColor3f(0.88, 0.93, 0.93);
-//	glVertex2f(135.0, 480.0);
-//	glVertex2f(135.0, 455.0);
-//	glVertex2f(300.0, 550.0);
-//	glVertex2f(300.0, 565.0);
-//
-//	glEnd();
-//	glFlush();
-//
-//	glBegin(GL_LINE_LOOP);
-//	glColor3f(0.0, 0.0, 0.0);
-//	glVertex2f(135.0, 480.0);
-//	glVertex2f(135.0, 455.0);
-//	glVertex2f(300.0, 550.0);
-//	glVertex2f(300.0, 565.0);
-//
-//	glEnd();
-//	glFlush();
-//
-//	glBegin(GL_LINE_LOOP);
-//	glColor3f(0.0, 0.0, 0.0);
-//	glVertex2f(135.0, 477.0);
-//	glVertex2f(300.0, 562.0);
-//
-//	glEnd();
-//	glFlush();
-//
-//	//cabinet front door 
-//	glBegin(GL_LINE_LOOP);
-//	glColor3f(0.0, 0.0, 0.0);
-//	glVertex2f(200.0, 737.0);
-//	glVertex2f(200.0, 480.0);
-//
-//	glEnd();
-//	glFlush();
-//
-//	glBegin(GL_LINE_LOOP);
-//	glColor3f(0.0, 0.0, 0.0);
-//	glVertex2f(250.0, 728.0);
-//	glVertex2f(250.0, 508.0);
-//
-//	glEnd();
-//	glFlush();
-//
-//}
-
 void window()
 {
 	//window
@@ -1083,15 +780,39 @@ void tv() {
 	glEnd();
 	glFlush();
 
-	// Screen
-	glBegin(GL_QUADS);
-	glColor3f(0.70, 0.96, 0.96);
-	glVertex3f(485.0, 490.0, 0.0);
-	glVertex3f(485.0, 377.0, 0.0);
-	glVertex3f(715.0, 377.0, 0.0);
-	glVertex3f(715.0, 490.0, 0.0);
-	glEnd();
-	glFlush();
+	if (tvIsOn) {
+		// Screen
+		glBegin(GL_QUADS);
+		glColor3f(0.70, 0.96, 0.96);
+		glVertex3f(485.0, 490.0, 0.0);
+		glVertex3f(485.0, 377.0, 0.0);
+		glVertex3f(715.0, 377.0, 0.0);
+		glVertex3f(715.0, 490.0, 0.0);
+		glEnd();
+		glFlush();
+	}
+	else {
+		// Screen
+		glBegin(GL_QUADS);
+		glColor3f(0.0, 0.0, 0.0);
+		glVertex3f(485.0, 490.0, 0.0);
+		glVertex3f(485.0, 377.0, 0.0);
+		glVertex3f(715.0, 377.0, 0.0);
+		glVertex3f(715.0, 490.0, 0.0);
+		glEnd();
+		glFlush();
+	
+	}
+
+	//// Screen
+	//glBegin(GL_QUADS);
+	//glColor3f(0.70, 0.96, 0.96);
+	//glVertex3f(485.0, 490.0, 0.0);
+	//glVertex3f(485.0, 377.0, 0.0);
+	//glVertex3f(715.0, 377.0, 0.0);
+	//glVertex3f(715.0, 490.0, 0.0);
+	//glEnd();
+	//glFlush();
 }
 
 void floor_mat() {
@@ -1685,50 +1406,73 @@ void megh()
 		megh_t += 1.0;
 }
 
+void drawTable() {
+	// Khung bàn
+    glBegin(GL_QUADS);
+    glColor3f(0.4, 0.2, 0.0); // Màu nâu đậm cho khung bàn
+    glVertex3f(300.0, 200.0, 0.0); // Đỉnh phải dưới
+    glVertex3f(300.0, 200.0 + 50.0, 0.0); // Đỉnh phải trên
+    glVertex3f(500.0, 200.0 + 50.0, 0.0); // Đỉnh trái trên
+    glVertex3f(500.0, 200.0, 0.0); // Đỉnh trái dưới
+    glEnd();
+    glFlush();
 
-void draw()
-{
-	triangle();
-	roof();
-	floor();
-	background_wall();
-	drawRefrigerator();
-	right_side_wall();
-	window();
-	cabinet_top();
-	cabinet_top_design();
-	cabinet_bottom();
-	cabinet_bottom_design();
-	sink();
-	stove();
-	water_tap();
-	tv_cabinet();
-	tv_cabinet_design();
-	tv();
-	floor_mat();
-	sofa();
-	chair_right();
-	chair_right_stand();
-	chair_left();
-	chair_left_stand();
-	table();
-	table_stand_left();
-	table_stand_right();
-	megh();
-	waterdrop();
-	glutSwapBuffers();
-	microwave();
-	microware_decord();
+    // Bề mặt bàn
+    glBegin(GL_QUADS);
+    glColor3f(0.6, 0.4, 0.2); // Màu nâu nhạt cho bề mặt bàn
+    glVertex3f(310.0, 210.0, 0.0); // Đỉnh phải dưới
+    glVertex3f(310.0, 210.0 + 30.0, 0.0); // Đỉnh phải trên
+    glVertex3f(490.0, 210.0 + 30.0, 0.0); // Đỉnh trái trên
+    glVertex3f(490.0, 210.0, 0.0); // Đỉnh trái dưới
+    glEnd();
+    glFlush();
 }
 
-void myDisplay(void)
-{
-	glViewport(-400, -300, 1600, 1200);
-	glPushMatrix();
-	draw();
-	glPopMatrix();
+void drawKitchenLight() {
+	// Vẽ hình tròn đại diện cho đèn bếp
+	float radius = 20.0; // Bán kính của đèn
+	float center_x = 550.0; // Tọa độ x của trung tâm đèn
+	float center_y = 700.0; // Tọa độ y của trung tâm đèn
+	int num_segments = 100; // Số lượng đoạn thẳng để xấp xỉ hình tròn
 
+	if (lightIsOn) {
+		glBegin(GL_TRIANGLE_FAN);
+		glColor3f(1.0, 1.0, 1.0); // Màu vàng cho đèn bếp
+		glVertex2f(center_x, center_y); // Trung tâm của hình tròn
+		for (int i = 0; i <= num_segments; i++) {
+			float theta = 2.0f * 3.1415926f * float(i) / float(num_segments); // Góc của mỗi đoạn thẳng
+			float x = radius * cosf(theta); // Tính tọa độ x của điểm trên hình tròn
+			float y = radius * sinf(theta); // Tính tọa độ y của điểm trên hình tròn
+			glVertex2f(x + center_x, y + center_y); // Điểm trên hình tròn
+		}
+		glEnd();
+		glFlush();
+	}
+	else {
+		glBegin(GL_TRIANGLE_FAN);
+		glColor3f(0.0, 0.0, 0.0); // Màu vàng cho đèn bếp
+		glVertex2f(center_x, center_y); // Trung tâm của hình tròn
+		for (int i = 0; i <= num_segments; i++) {
+			float theta = 2.0f * 3.1415926f * float(i) / float(num_segments); // Góc của mỗi đoạn thẳng
+			float x = radius * cosf(theta); // Tính tọa độ x của điểm trên hình tròn
+			float y = radius * sinf(theta); // Tính tọa độ y của điểm trên hình tròn
+			glVertex2f(x + center_x, y + center_y); // Điểm trên hình tròn
+		}
+		glEnd();
+		glFlush();
+	}
+
+
+	// Vẽ dây dẫn điện
+	glBegin(GL_LINES);
+	glColor3f(0.0, 0.0, 0.0); // Màu đen cho dây điện
+	glVertex2f(center_x, center_y + radius + 50.0); // Điểm bắt đầu từ trên cùng của đèn
+	glVertex2f(center_x, center_y - radius + 40.0); // Điểm cuối của dây điện (dưới cùng)
+	glEnd();
+	glFlush();
 }
+
+
 
 void display() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Xóa bộ đệm màu và bộ đệm độ sâu
@@ -1758,28 +1502,49 @@ void display() {
 	sofa();
 	microwave();
 	microware_decord();
+	drawTable();
+	drawKitchenLight();
 
 	glFlush();
 }
 
 
 void keyboard(unsigned char key, int x, int y) {
-
-	if (key == 'w') {
-		glTranslatef(0, -50, 0);
-		glutPostRedisplay();
-	}
-	else if (key == 's') {
-		glTranslatef(0, 50, 0);
-		glutPostRedisplay();
-	}
-	else if (key == 'd') {
-		glTranslatef(-50, 0, 0);
-		glutPostRedisplay();
-	}
-	else if (key == 'a') {
-		glTranslatef(50, 0, 0);
-		glutPostRedisplay();
+	switch(key) {
+		case 'w':
+			glTranslatef(0, -50, 0);
+			glutPostRedisplay();
+			break;
+		case 's':
+			glTranslatef(0, 50, 0);
+			glutPostRedisplay();
+			break;
+		case 'd':
+			glTranslatef(-50, 0, 0);
+			glutPostRedisplay();
+			break;
+		case 'a':
+			glTranslatef(50, 0, 0);
+			glutPostRedisplay();
+			break;
+		case '1':
+			tvIsOn = 1; // Bật TV khi bấm 'b'
+			glutPostRedisplay(); // Yêu cầu vẽ lại cửa sổ
+			break;
+		case '2':
+			tvIsOn = 0; // Tắt TV khi bấm 't'
+			glutPostRedisplay(); // Yêu cầu vẽ lại cửa sổ
+			break;
+		case '3':
+			lightIsOn = 1; // Bật đèn khi bấm 'b'
+			glutPostRedisplay(); // Yêu cầu vẽ lại cửa sổ
+			break;
+		case '4':
+			lightIsOn = 0; // Tắt đèn khi bấm 't'
+			glutPostRedisplay(); // Yêu cầu vẽ lại cửa sổ
+			break;
+		default:
+			break;
 	}
 
 }
