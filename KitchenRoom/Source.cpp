@@ -1463,7 +1463,8 @@ void drawTable() {
 	// Chân bàn A
 	glBegin(GL_QUADS);
 	//glColor3f(0.50, 0.50, 0.50);
-	glColor3f(0.4, 0.2, 0.0);
+	//glColor3f(0.4, 0.2, 0.0);
+	glColor3f(calculateColor(0.4), calculateColor(0.2), calculateColor(0.0));
 	glVertex3f(440.0, 250.0, 0.0); // A
 	glVertex3f(440.0, 130.0, 0.0); // C
 	glVertex3f(450.0, 130.0, 0.0); // D
@@ -1484,7 +1485,8 @@ void drawTable() {
 
 	glBegin(GL_QUADS);
 	//glColor3f(0.50, 0.50, 0.50);
-	glColor3f(0.4, 0.2, 0.0);
+	//glColor3f(0.4, 0.2, 0.0);
+	glColor3f(calculateColor(0.4), calculateColor(0.2), calculateColor(0.0));
 	glVertex3f(670.0, 250.0, 0.0); // A
 	glVertex3f(670.0, 130.0, 0.0); // C
 	glVertex3f(680.0, 130.0, 0.0); // D
@@ -1505,7 +1507,8 @@ void drawTable() {
 
 	glBegin(GL_QUADS);
 	//glColor3f(0.50, 0.50, 0.50);
-	glColor3f(0.4, 0.2, 0.0);
+	//glColor3f(0.4, 0.2, 0.0);
+	glColor3f(calculateColor(0.4), calculateColor(0.2), calculateColor(0.0));
 	glVertex3f(485.0, 210.0, 0.0); // A
 	glVertex3f(485.0, 110.0, 0.0); // C
 	glVertex3f(495.0, 110.0, 0.0); // D
@@ -1525,7 +1528,8 @@ void drawTable() {
 
 	glBegin(GL_QUADS);
 	//glColor3f(0.50, 0.50, 0.50);
-	glColor3f(0.4, 0.2, 0.0);
+	//glColor3f(0.4, 0.2, 0.0);
+	glColor3f(calculateColor(0.4), calculateColor(0.2), calculateColor(0.0));
 	glVertex3f(705.0, 210.0, 0.0);  // A
 	glVertex3f(705.0, 110.0, 0.0); // C
 	glVertex3f(695.0, 110.0, 0.0); // D
@@ -1545,7 +1549,8 @@ void drawTable() {
 	// Mặt bàn
 	glBegin(GL_QUADS);
 	//glColor3f(0.50, 0.50, 0.50);
-	glColor3f(0.4, 0.2, 0.0);
+	//glColor3f(0.4, 0.2, 0.0);
+	glColor3f(calculateColor(0.4), calculateColor(0.2), calculateColor(0.0));
 	glVertex3f(705.0, 210.0, 0.0);  // D
 	glVertex3f(670.0, 250.0, 0.0); // B
 	glVertex3f(440.0, 250.0, 0.0); // A
