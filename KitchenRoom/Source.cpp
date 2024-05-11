@@ -11,10 +11,20 @@ static float  drop_t = 0.0;
 int tvIsOn = 1;
 int lightIsOn = 1;
 
+float calculateColor(float color) {
+	if (lightIsOn) {
+		return color;
+	}
+	else {
+		// Giảm độ sáng của màu sắc khi đèn tắt
+		return color * 0.5f;
+	}
+}
+
 void triangle()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Thêm GL_DEPTH_BUFFER_BIT để xóa bộ đệm độ sâu
-	glColor3f(0.88, 0.88, 0.88);
+	glColor3f(calculateColor(0.88), calculateColor(0.88), calculateColor(0.88));
 	glPointSize(4.0);
 
 	glBegin(GL_TRIANGLES);
@@ -37,7 +47,8 @@ void roof()
 {
 	//roof
 	glBegin(GL_POLYGON);
-	glColor3f(0.96, 0.96, 0.93);
+	//glColor3f(0.96, 0.96, 0.93);
+	glColor3f(calculateColor(0.96), calculateColor(0.96), calculateColor(0.93));	
 	glVertex3f(0.0, 768.0, 0.0);
 	glVertex3f(70.0, 748.0, 0.0);
 	glVertex3f(130.0, 748.0, 0.0);
@@ -80,7 +91,8 @@ void floor()
 {
 	//floor
 	glBegin(GL_QUADS);
-	glColor3f(1.1, 1.0, 0.6);
+	//glColor3f(1.1, 1.0, 0.6);
+	glColor3f(calculateColor(1.1), calculateColor(1.0), calculateColor(0.6));
 	glVertex3f(130.0, 0.0, 0.0);
 	glVertex3f(1024.0, 0.0, 0.0);
 	glVertex3f(800.0, 238.0, 0.0);
@@ -101,7 +113,8 @@ void floor()
 void drawRefrigerator() {
 	// Cửa trên
 	glBegin(GL_QUADS);
-    glColor3f(0.5, 0.5, 0.5);
+    //glColor3f(0.5, 0.5, 0.5);
+	glColor3f(calculateColor(0.5), calculateColor(0.5), calculateColor(0.5));
     glVertex3f(430.0, 520.0, 0.0); // Top right
     glVertex3f(315.0, 520.0, 0.0); // Top left
     glVertex3f(315.0, 220.0, 0.0); // Bottom left
@@ -121,7 +134,8 @@ void drawRefrigerator() {
 
 	// Cửa dưới
 	glBegin(GL_QUADS);
-	glColor3f(0.5, 0.5, 0.5);
+	//glColor3f(0.5, 0.5, 0.5);
+	glColor3f(calculateColor(0.5), calculateColor(0.5), calculateColor(0.5));
 	glVertex3f(430.0, 410.0, 0.0); // Top right
 	glVertex3f(315.0, 410.0, 0.0); // Top left
 	glVertex3f(315.0, 220.0, 0.0); // Bottom left
@@ -141,7 +155,8 @@ void drawRefrigerator() {
 
 	// Khoảng trắng
 	glBegin(GL_QUADS);
-	glColor3f(1.0, 1.0, 1.0); // White color for the space
+	//glColor3f(1.0, 1.0, 1.0); // White color for the space
+	glColor3f(calculateColor(1.0), calculateColor(1.0), calculateColor(1.0));
 	glVertex3f(430.0, 410.0, 0.0); // Top right
 	glVertex3f(315.0, 410.0, 0.0); // Top left
 	glVertex3f(315.0, 410.0 - 5.0, 0.0); // Bottom left (reduce the y coordinate to create a gap)
@@ -155,7 +170,8 @@ void microwave() {
 
 	// Vẽ đáy của hộp
 	glBegin(GL_QUADS);
-	glColor3f(0.25f, 0.25f, 0.25f);
+	//glColor3f(0.25f, 0.25f, 0.25f);
+	glColor3f(calculateColor(0.25), calculateColor(0.25), calculateColor(0.25));
 	glVertex3f(81.0f, 247.0f, 0.0f);   // Điểm 
 	glVertex3f(30.0f, 210.0f, 0.0f);   // Điểm 
 	glVertex3f(90.0f, 210.0f, 0.0f);  // Điểm
@@ -174,7 +190,8 @@ void microwave() {
 
 	// Vẽ nắp của hộp
 	glBegin(GL_QUADS);
-	glColor3f(0.25f, 0.25f, 0.25f);
+	//glColor3f(0.25f, 0.25f, 0.25f);
+	glColor3f(calculateColor(0.25), calculateColor(0.25), calculateColor(0.25));
 	glVertex3f(81.0f, 287.0f, 0.0f);   //
 	glVertex3f(30.0f, 250.0f, 0.0f);   // Điểm 
 	glVertex3f(88.0f, 250.0f, 0.0f);  // --
@@ -191,7 +208,8 @@ void microwave() {
 
 	// Vẽ cạnh trái
 	glBegin(GL_QUADS);
-	glColor3f(0.25f, 0.25f, 0.25f);
+	//glColor3f(0.25f, 0.25f, 0.25f);
+	glColor3f(calculateColor(0.25), calculateColor(0.25), calculateColor(0.25));
 	glVertex3f(88.0f, 250.0f, 0.0f);  // Điểm 
 	glVertex3f(30.0f, 250.0f, 0.0f);   // Điểm 
 	glVertex3f(30.0f, 210.0f, 0.0f);   // Điểm 
@@ -211,7 +229,8 @@ void microwave() {
 	// Vẽ mặt trực diện
 
 	glBegin(GL_QUADS);
-	glColor3f(0.25f, 0.25f, 0.25f);
+	//glColor3f(0.25f, 0.25f, 0.25f);
+	glColor3f(calculateColor(0.25), calculateColor(0.25), calculateColor(0.25));
 	glVertex3f(88.0f, 250.0f, 0.0f);  // Điểm G
 	glVertex3f(132.0f, 287.0f, 0.0f);  // Điểm H
 	glVertex3f(132.0f, 250.0f, 0.0f);  // Điểm D
@@ -232,7 +251,8 @@ void microwave() {
 
 void microware_decord() {
 	glBegin(GL_QUADS);
-	glColor3f(0.88, 0.93, 0.93);
+	//glColor3f(0.88, 0.93, 0.93);
+	glColor3f(calculateColor(0.88), calculateColor(0.93), calculateColor(0.93));
 	glVertex3f(98.0f, 250.0f, 0.0f);  // --
 	glVertex3f(125.0f, 273.0f, 0.0f);  // --
 	glVertex3f(125.0f, 247.0f, 0.0f);  // --
@@ -257,7 +277,8 @@ void background_wall()
 {
 	//background wall
 	glBegin(GL_POLYGON);
-	glColor3f(0.2, 0.1, 0.0);
+	//glColor3f(0.2, 0.1, 0.0);
+	glColor3f(calculateColor(0.2), calculateColor(0.1), calculateColor(0.0));
 	glVertex3f(800.0, 718.0, 0.0);
 	glVertex3f(300.0, 718.0, 0.0);
 	glVertex3f(300.0, 538.0, 0.0);
@@ -270,7 +291,8 @@ void background_wall()
 	glFlush();
 
 	glBegin(GL_QUADS);
-	glColor3f(0.25, 0.25, 0.25);
+	//glColor3f(0.25, 0.25, 0.25);
+	glColor3f(calculateColor(0.25), calculateColor(0.25), calculateColor(0.25));
 	glVertex3f(700.0, 718.0, 0.0);
 	glVertex3f(500.0, 718.0, 0.0);
 	glVertex3f(500.0, 360.0, 0.0);
@@ -293,7 +315,8 @@ void right_side_wall()
 {
 	//right side wall
 	glBegin(GL_QUADS);
-	glColor3f(0.88, 0.88, 0.88);
+	//glColor3f(0.88, 0.88, 0.88);
+	glColor3f(calculateColor(0.88), calculateColor(0.88), calculateColor(0.88));
 	glVertex3f(1024.0, 768.0, 0.0);
 	glVertex3f(800.0, 718.0, 0.0);
 	glVertex3f(800.0, 238.0, 0.0);
@@ -314,7 +337,8 @@ void window()
 {
 	//window
 	glBegin(GL_QUADS);
-	glColor3f(0.90, 0.97, 0.98);
+	//glColor3f(0.90, 0.97, 0.98);
+	glColor3f(calculateColor(0.90), calculateColor(0.97), calculateColor(0.98));
 	glVertex3f(900.0, 600.0, 0.0);
 	glVertex3f(900.0, 300.0, 0.0);
 	glVertex3f(970.0, 280.0, 0.0);
@@ -336,7 +360,8 @@ void cabinet_top()
 {
 	//cabinet side top
 	glBegin(GL_QUADS);
-	glColor3f(0.25, 0.25, 0.25);
+	//glColor3f(0.25, 0.25, 0.25);
+	glColor3f(calculateColor(0.25), calculateColor(0.25), calculateColor(0.25));
 	glVertex3f(0.0, 748.0, 0.0);
 	glVertex3f(0.0, 438.0, 0.0);
 	glVertex3f(130.0, 438.0, 0.0);
@@ -355,7 +380,8 @@ void cabinet_top()
 
 	//cabinet front top
 	glBegin(GL_QUADS);
-	glColor3f(0.25, 0.25, 0.25);
+	//glColor3f(0.25, 0.25, 0.25);
+	glColor3f(calculateColor(0.25), calculateColor(0.25), calculateColor(0.25));
 	glVertex3f(130.0, 748.0, 0.0);
 	glVertex3f(130.0, 438.0, 0.0);
 	glVertex3f(300.0, 538.0, 0.0);
@@ -377,7 +403,8 @@ void cabinet_top_design()
 {
 	//cabinet front door design 
 	glBegin(GL_QUADS);
-	glColor3f(0.88, 0.93, 0.93);
+	//glColor3f(0.88, 0.93, 0.93);
+	glColor3f(calculateColor(0.88), calculateColor(0.93), calculateColor(0.93));
 	glVertex3f(130.0, 480.0, 0.0);
 	glVertex3f(130.0, 455.0, 0.0);
 	glVertex3f(135.0, 455.0, 0.0);
@@ -395,7 +422,8 @@ void cabinet_top_design()
 	glFlush();
 
 	glBegin(GL_QUADS);
-	glColor3f(0.88, 0.93, 0.93);
+	//glColor3f(0.88, 0.93, 0.93);
+	glColor3f(calculateColor(0.88), calculateColor(0.93), calculateColor(0.93));
 	glVertex3f(135.0, 480.0, 0.0);
 	glVertex3f(135.0, 455.0, 0.0);
 	glVertex3f(300.0, 550.0, 0.0);
@@ -440,7 +468,8 @@ void cabinet_bottom()
 {
 	//cabinet side Bottom
 	glBegin(GL_QUADS);
-	glColor3f(0.25, 0.25, 0.25);
+	//glColor3f(0.25, 0.25, 0.25);
+	glColor3f(calculateColor(0.25), calculateColor(0.25), calculateColor(0.25));
 	glVertex2f(0.0, 200.0);
 	glVertex2f(0.0, 0.0);
 	glVertex2f(130.0, 0.0);
@@ -462,7 +491,8 @@ void cabinet_bottom()
 
 	//cabinet front Bottom
 	glBegin(GL_QUADS);
-	glColor3f(0.25, 0.25, 0.25);
+	//glColor3f(0.25, 0.25, 0.25);
+	glColor3f(calculateColor(0.25), calculateColor(0.25), calculateColor(0.25));
 	glVertex2f(130.0, 200.0);
 	glVertex2f(130.0, 0.0);
 	glVertex2f(300.0, 238.0);
@@ -488,7 +518,8 @@ void cabinet_bottom_design()
 	//cabinet front Bottom Design
 
 	glBegin(GL_QUADS);
-	glColor3f(0.88, 0.93, 0.93);
+	//glColor3f(0.88, 0.93, 0.93);
+	glColor3f(calculateColor(0.88), calculateColor(0.93), calculateColor(0.93));
 	glVertex2f(130.0, 180.0);
 	glVertex2f(130.0, 155.0);
 	glVertex2f(135.0, 155.0);
@@ -508,7 +539,8 @@ void cabinet_bottom_design()
 	glFlush();
 
 	glBegin(GL_QUADS);
-	glColor3f(0.88, 0.93, 0.93);
+	//glColor3f(0.88, 0.93, 0.93);
+	glColor3f(calculateColor(0.88), calculateColor(0.93), calculateColor(0.93));
 	glVertex2f(130.0, 180.0);
 	glVertex2f(135.0, 180.0);
 	glVertex2f(305.0, 345.0);
@@ -530,7 +562,8 @@ void cabinet_bottom_design()
 
 
 	glBegin(GL_QUADS);
-	glColor3f(0.88, 0.93, 0.93);
+	//glColor3f(0.88, 0.93, 0.93);
+	glColor3f(calculateColor(0.88), calculateColor(0.93), calculateColor(0.93));
 	glVertex2f(135.0, 180.0);
 	glVertex2f(135.0, 155.0);
 	glVertex2f(305.0, 325.0);
@@ -567,7 +600,8 @@ void cabinet_bottom_design()
 void sink() {
 	//sink
 	glBegin(GL_QUADS);
-	glColor3f(0.63f, 0.63f, 0.63f);
+	//glColor3f(0.63f, 0.63f, 0.63f);
+	glColor3f(calculateColor(0.63), calculateColor(0.63), calculateColor(0.63));
 	glVertex3f(0.0f, 200.0f, 0.0f);
 	glVertex3f(130.0f, 200.0f, 0.0f);
 	glVertex3f(300.0f, 360.0f, 0.0f);
@@ -586,7 +620,8 @@ void sink() {
 
 	//sink side wall
 	glBegin(GL_POLYGON);
-	glColor3f(0.63f, 0.63f, 0.63f);
+	//glColor3f(0.63f, 0.63f, 0.63f);
+	glColor3f(calculateColor(0.63), calculateColor(0.63), calculateColor(0.63));
 	glVertex3f(0.0f, 200.0f, 0.0f);
 	glVertex3f(220.0f, 360.0f, 0.0f);
 	glVertex3f(220.0f, 491.0f, 0.0f);
@@ -608,7 +643,8 @@ void sink() {
 
 void stove() {
 	glBegin(GL_QUADS);
-	glColor3f(0.25f, 0.25f, 0.25f);
+	//glColor3f(0.25f, 0.25f, 0.25f);
+	glColor3f(calculateColor(0.25), calculateColor(0.25), calculateColor(0.25));
 	glVertex3f(221.0f, 357.0f, 0.0f);
 	glVertex3f(170.0f, 320.0f, 0.0f);
 	glVertex3f(250.0f, 320.0f, 0.0f);
@@ -630,7 +666,8 @@ void stove() {
 void water_tap() {
 	// Sink
 	glBegin(GL_QUADS);
-	glColor3f(0.50, 0.50, 0.50);
+	//glColor3f(0.50, 0.50, 0.50);
+	glColor3f(calculateColor(0.50), calculateColor(0.50), calculateColor(0.50));
 	glVertex3f(162.0, 310.0, 0.0);
 	glVertex3f(85.0, 250.0, 0.0);
 	glVertex3f(178.0, 250.0, 0.0);
@@ -670,7 +707,8 @@ void water_tap() {
 
 	// Tap
 	glBegin(GL_QUADS);
-	glColor3f(0.50, 0.50, 0.50);
+	//glColor3f(0.50, 0.50, 0.50);
+	glColor3f(calculateColor(0.50), calculateColor(0.50), calculateColor(0.50));
 	glVertex3f(140.0, 320.0, 0.0);
 	glVertex3f(160.0, 315.0, 0.0);
 	glVertex3f(160.0, 323.0, 0.0);
@@ -679,7 +717,8 @@ void water_tap() {
 	glFlush();
 
 	glBegin(GL_QUADS);
-	glColor3f(0.50, 0.50, 0.50);
+	//glColor3f(0.50, 0.50, 0.50);
+	glColor3f(calculateColor(0.50), calculateColor(0.50), calculateColor(0.50));
 	glVertex3f(130.0, 330.0, 0.0);
 	glVertex3f(130.0, 295.0, 0.0);
 	glVertex3f(140.0, 293.0, 0.0);
@@ -702,7 +741,8 @@ void water_tap() {
 
 void tv_cabinet() {
 	glBegin(GL_QUADS);
-	glColor3f(0.25, 0.25, 0.25);
+	//glColor3f(0.25, 0.25, 0.25);
+	glColor3f(calculateColor(0.25), calculateColor(0.25), calculateColor(0.25));
 	glVertex3f(450.0, 360.0, 0.0);
 	glVertex3f(452.0, 358.0, 0.0);
 	glVertex3f(752.0, 358.0, 0.0);
@@ -720,7 +760,8 @@ void tv_cabinet() {
 	glFlush();
 
 	glBegin(GL_QUADS);
-	glColor3f(0.25, 0.25, 0.25);
+	//glColor3f(0.25, 0.25, 0.25);
+	glColor3f(calculateColor(0.25), calculateColor(0.25), calculateColor(0.25));
 	glVertex3f(452.0, 357.0, 0.0);
 	glVertex3f(452.0, 220.0, 0.0);
 	glVertex3f(752.0, 220.0, 0.0);
@@ -741,7 +782,8 @@ void tv_cabinet() {
 
 void tv_cabinet_design() {
 	glBegin(GL_QUADS);
-	glColor3f(0.88, 0.93, 0.93);
+	//glColor3f(0.88, 0.93, 0.93);
+	glColor3f(calculateColor(0.88), calculateColor(0.93), calculateColor(0.93));
 	glVertex3f(452.0, 345.0, 0.0);
 	glVertex3f(452.0, 335.0, 0.0);
 	glVertex3f(752.0, 335.0, 0.0);
@@ -817,7 +859,8 @@ void tv() {
 
 void floor_mat() {
 	glBegin(GL_QUADS);
-	glColor3f(0.11, 0.13, 0.51);
+	//glColor3f(0.11, 0.13, 0.51);
+	glColor3f(calculateColor(0.11), calculateColor(0.13), calculateColor(0.51));
 	glVertex3f(472.0, 200.0, 0.0);
 	glVertex3f(482.0, 130.0, 0.0);
 	glVertex3f(800.0, 130.0, 0.0);
@@ -826,7 +869,8 @@ void floor_mat() {
 	glFlush();
 
 	glBegin(GL_LINE_LOOP);
-	glColor3f(0.11, 0.13, 0.51);
+	//glColor3f(0.11, 0.13, 0.51);
+	glColor3f(calculateColor(0.11), calculateColor(0.13), calculateColor(0.51));
 	glVertex3f(472.0, 200.0, 0.0);
 	glVertex3f(482.0, 130.0, 0.0);
 	glVertex3f(800.0, 130.0, 0.0);
@@ -835,7 +879,8 @@ void floor_mat() {
 	glFlush();
 
 	glBegin(GL_QUADS);
-	glColor3f(0.57, 0.57, 0.59);
+	//glColor3f(0.57, 0.57, 0.59);
+	glColor3f(calculateColor(0.57), calculateColor(0.57), calculateColor(0.59));
 	glVertex3f(482.0, 190.0, 0.0);
 	glVertex3f(492.0, 140.0, 0.0);
 	glVertex3f(785.0, 140.0, 0.0);
@@ -848,7 +893,8 @@ void floor_mat() {
 void sofa() {
 	// Top
 	glBegin(GL_QUADS);
-	glColor3f(0.50, 0.50, 0.50);
+	//glColor3f(0.50, 0.50, 0.50);
+	glColor3f(calculateColor(0.50), calculateColor(0.50), calculateColor(0.50));
 	glVertex3f(950.0, 145.0, 0.0);
 	glVertex3f(940.0, 160.0, 0.0);
 	glVertex3f(700.0, 160.0, 0.0);
@@ -867,7 +913,8 @@ void sofa() {
 
 	// Back
 	glBegin(GL_QUADS);
-	glColor3f(0.50, 0.50, 0.50);
+	//glColor3f(0.50, 0.50, 0.50);
+	glColor3f(calculateColor(0.50), calculateColor(0.50), calculateColor(0.50));
 	glVertex3f(950.0, 145.0, 0.0);
 	glVertex3f(720.0, 145.0, 0.0);
 	glVertex3f(720.0, 65.0, 0.0);
@@ -886,7 +933,8 @@ void sofa() {
 
 	// Side
 	glBegin(GL_QUADS);
-	glColor3f(0.50, 0.50, 0.50);
+	//glColor3f(0.50, 0.50, 0.50);
+	glColor3f(calculateColor(0.50), calculateColor(0.50), calculateColor(0.50));
 	glVertex3f(700.0, 160.0, 0.0);
 	glVertex3f(700.0, 120.0, 0.0);
 	glVertex3f(720.0, 120.0, 0.0);
@@ -895,7 +943,8 @@ void sofa() {
 	glFlush();
 
 	glBegin(GL_QUADS);
-	glColor3f(0.50, 0.50, 0.50);
+	//glColor3f(0.50, 0.50, 0.50);
+	glColor3f(calculateColor(0.50), calculateColor(0.50), calculateColor(0.50));
 	glVertex3f(720.0, 120.0, 0.0);
 	glVertex3f(660.0, 140.0, 0.0);
 	glVertex3f(660.0, 90.0, 0.0);
@@ -946,7 +995,8 @@ void sofa() {
 void chair_right() {
 	// Back
 	glBegin(GL_QUADS);
-	glColor3f(1.0, 0.5, 0.0);
+	//glColor3f(1.0, 0.5, 0.0);
+	glColor3f(calculateColor(1.0), calculateColor(0.5), calculateColor(0.0));
 	glVertex3f(545.0, 270.0, 0.0);
 	glVertex3f(545.0, 170.0, 0.0);
 	glVertex3f(550.0, 165.0, 0.0);
@@ -956,7 +1006,8 @@ void chair_right() {
 
 	// Seat
 	glBegin(GL_QUADS);
-	glColor3f(1.0, 0.5, 0.0);
+	//glColor3f(1.0, 0.5, 0.0);
+	glColor3f(calculateColor(1.0), calculateColor(0.5), calculateColor(0.0));
 	glVertex3f(545.0, 170.0, 0.0);
 	glVertex3f(470.0, 170.0, 0.0);
 	glVertex3f(470.0, 165.0, 0.0);
@@ -976,7 +1027,8 @@ void chair_right() {
 	glFlush();
 
 	glBegin(GL_QUADS);
-	glColor3f(1.0, 0.5, 0.0);
+	//glColor3f(1.0, 0.5, 0.0);
+	glColor3f(calculateColor(1.0), calculateColor(0.5), calculateColor(0.0));
 	glVertex3f(544.0, 200.0, 0.0);
 	glVertex3f(472.0, 200.0, 0.0);
 	glVertex3f(470.0, 170.0, 0.0);
@@ -1475,6 +1527,9 @@ void drawKitchenLight() {
 
 
 void display() {
+	GLfloat ambientLight[] = { 0.2, 0.2, 0.2, 1.0 };
+	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambientLight);
+
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Xóa bộ đệm màu và bộ đệm độ sâu
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
@@ -1570,16 +1625,6 @@ void update(int value) {
 
 void main(int argc, char** argv)
 {
-	/*glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
-	glutInitWindowSize(800, 600);
-	glutInitWindowPosition(100, 150);
-	glutCreateWindow("Living Room");
-	glutKeyboardFunc(keyboard);
-	glutDisplayFunc(myDisplay);
-	glutTimerFunc(1000, update, 0);
-	myInit();
-	glutMainLoop();*/
 
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
