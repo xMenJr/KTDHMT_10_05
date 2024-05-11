@@ -958,7 +958,7 @@ void sofa() {
 	glVertex3f(700.0, 120.0, 0.0);
 	glVertex3f(660.0, 140.0, 0.0);
 	glVertex3f(660.0, 90.0, 0.0);
-	glVertex3f(720.0, 65.0, 0.0);
+	glVertex3f(720.0, 65.0, 0.0); // C
 	glVertex3f(720.0, 145.0, 0.0);
 	glEnd();
 	glFlush();
@@ -1459,25 +1459,110 @@ void megh()
 }
 
 void drawTable() {
-	// Khung bàn
-    glBegin(GL_QUADS);
-    glColor3f(0.4, 0.2, 0.0); // Màu nâu đậm cho khung bàn
-    glVertex3f(300.0, 200.0, 0.0); // Đỉnh phải dưới
-    glVertex3f(300.0, 200.0 + 50.0, 0.0); // Đỉnh phải trên
-    glVertex3f(500.0, 200.0 + 50.0, 0.0); // Đỉnh trái trên
-    glVertex3f(500.0, 200.0, 0.0); // Đỉnh trái dưới
-    glEnd();
-    glFlush();
 
-    // Bề mặt bàn
-    glBegin(GL_QUADS);
-    glColor3f(0.6, 0.4, 0.2); // Màu nâu nhạt cho bề mặt bàn
-    glVertex3f(310.0, 210.0, 0.0); // Đỉnh phải dưới
-    glVertex3f(310.0, 210.0 + 30.0, 0.0); // Đỉnh phải trên
-    glVertex3f(490.0, 210.0 + 30.0, 0.0); // Đỉnh trái trên
-    glVertex3f(490.0, 210.0, 0.0); // Đỉnh trái dưới
-    glEnd();
-    glFlush();
+	// Chân bàn A
+	glBegin(GL_QUADS);
+	//glColor3f(0.50, 0.50, 0.50);
+	glColor3f(0.4, 0.2, 0.0);
+	glVertex3f(440.0, 250.0, 0.0); // A
+	glVertex3f(440.0, 130.0, 0.0); // C
+	glVertex3f(450.0, 130.0, 0.0); // D
+	glVertex3f(450.0, 250.0, 0.0); // B
+	glEnd();
+	glFlush();
+	
+	glBegin(GL_LINE_LOOP);
+	glColor3f(0.0, 0.0, 0.0);
+	glVertex3f(440.0, 250.0, 0.0); // A
+	glVertex3f(440.0, 130.0, 0.0); // C
+	glVertex3f(450.0, 130.0, 0.0); // D
+	glVertex3f(450.0, 250.0, 0.0); // B
+	glEnd();
+	glFlush();
+
+	// Chân bàn B
+
+	glBegin(GL_QUADS);
+	//glColor3f(0.50, 0.50, 0.50);
+	glColor3f(0.4, 0.2, 0.0);
+	glVertex3f(670.0, 250.0, 0.0); // A
+	glVertex3f(670.0, 130.0, 0.0); // C
+	glVertex3f(680.0, 130.0, 0.0); // D
+	glVertex3f(680.0, 230.0, 0.0); // B
+	glEnd();
+	glFlush();
+
+	glBegin(GL_LINE_LOOP);
+	glColor3f(0.0, 0.0, 0.0);
+	glVertex3f(670.0, 250.0, 0.0); // A
+	glVertex3f(670.0, 130.0, 0.0); // C
+	glVertex3f(680.0, 130.0, 0.0); // D
+	glVertex3f(680.0, 230.0, 0.0); // B
+	glEnd();
+	glFlush();
+
+	// Chân bàn C
+
+	glBegin(GL_QUADS);
+	//glColor3f(0.50, 0.50, 0.50);
+	glColor3f(0.4, 0.2, 0.0);
+	glVertex3f(485.0, 210.0, 0.0); // A
+	glVertex3f(485.0, 110.0, 0.0); // C
+	glVertex3f(495.0, 110.0, 0.0); // D
+	glVertex3f(495.0, 230.0, 0.0); // B
+	glEnd();
+	glFlush();
+
+	glBegin(GL_LINE_LOOP);
+	glColor3f(0.0, 0.0, 0.0);
+	glVertex3f(485.0, 210.0, 0.0); // A
+	glVertex3f(485.0, 110.0, 0.0); // C
+	glVertex3f(495.0, 110.0, 0.0); // D
+	glVertex3f(495.0, 210.0, 0.0); // B
+	glEnd();
+	glFlush();
+	// Chân bàn D
+
+	glBegin(GL_QUADS);
+	//glColor3f(0.50, 0.50, 0.50);
+	glColor3f(0.4, 0.2, 0.0);
+	glVertex3f(705.0, 210.0, 0.0);  // A
+	glVertex3f(705.0, 110.0, 0.0); // C
+	glVertex3f(695.0, 110.0, 0.0); // D
+	glVertex3f(695.0, 220.0, 0.0); // B
+	glEnd();
+	glFlush();
+
+	glBegin(GL_LINE_LOOP);
+	glColor3f(0.0, 0.0, 0.0);
+	glVertex3f(705.0, 210.0, 0.0);  // A
+	glVertex3f(705.0, 110.0, 0.0); // C
+	glVertex3f(695.0, 110.0, 0.0); // D
+	glVertex3f(695.0, 220.0, 0.0); // B
+	glEnd();
+	glFlush();
+
+	// Mặt bàn
+	glBegin(GL_QUADS);
+	//glColor3f(0.50, 0.50, 0.50);
+	glColor3f(0.4, 0.2, 0.0);
+	glVertex3f(705.0, 210.0, 0.0);  // D
+	glVertex3f(670.0, 250.0, 0.0); // B
+	glVertex3f(440.0, 250.0, 0.0); // A
+	glVertex3f(485.0, 210.0, 0.0); // C
+	glEnd();
+	glFlush();
+
+	glBegin(GL_LINE_LOOP);
+	glColor3f(0.0, 0.0, 0.0);
+	glVertex3f(705.0, 210.0, 0.0);  // D
+	glVertex3f(670.0, 250.0, 0.0); // B
+	glVertex3f(440.0, 250.0, 0.0); // A
+	glVertex3f(485.0, 210.0, 0.0); // C
+	glEnd();
+	glFlush();
+
+
 }
 
 void drawKitchenLight() {
@@ -1525,7 +1610,6 @@ void drawKitchenLight() {
 }
 
 
-
 void display() {
 	GLfloat ambientLight[] = { 0.2, 0.2, 0.2, 1.0 };
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambientLight);
@@ -1554,10 +1638,11 @@ void display() {
 	tv_cabinet_design();
 	tv();
 	floor_mat();
+	drawTable();
 	sofa();
 	microwave();
 	microware_decord();
-	drawTable();
+
 	drawKitchenLight();
 
 	glFlush();
